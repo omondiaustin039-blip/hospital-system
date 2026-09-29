@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Sunrise Community Hospital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Sunrise Community Hospital</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="book.html" class="active">Book Appointment</a></li>
+                <li><a href="public-data.html">Public Health Data</a></li>
+                <li><a href="admin.php">Admin Panel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Patient Appointment Booking Form</h2>
+        <div id="error-message" class="error"></div>
+
+        <form id="appointmentForm" action="process.php" method="POST" onsubmit="return validateForm()">
+            <label for="patient_name">Patient Name:</label>
+            <input type="text" id="patient_name" name="patient_name" required>
+
+            <label for="national_id">National ID Number:</label>
+            <input type="text" id="national_id" name="national_id" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="phone_number">Phone Number:</label>
+            <input type="tel" id="phone_number" name="phone_number" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option value="">Select Department</option>
+                <option value="General">General</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Dental">Dental</option>
+                <option value="Cardiology">Cardiology</option>
+            </select>
+
+            <label for="appointment_date">Appointment Date:</label>
+            <input type="date" id="appointment_date" name="appointment_date" required>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
